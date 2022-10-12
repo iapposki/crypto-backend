@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+model Transaction {
+    id                  String          @id @map("_id") @db.ObjectId @default(auto())
+    blockNumber         String          
+    timeStamp           String
+    hash                String          @unique
+    nonce           String
+    blockHash           String
+    transactionIndex           String
+    from           String
+    to           String
+    value           String
+    gas           String
+    gasPrice           String
+    isError           String
+    txreceipt_status           String
+    input           String
+    contractAddress           String?
+    cumulativeGasUsed           String
+    gasUsed           String
+    confirmations           String
+    methodId           String
+    functionName           String?
+}
+
+model CryptoData {
+    id              String      @id @map("_id") @db.ObjectId @default(auto())
+    cryptoCurrency  String      @unique
+    priceHistory    Float[]
+}
