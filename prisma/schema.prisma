@@ -33,6 +33,7 @@ model Transaction {
     confirmations           String
     methodId           String
     functionName           String?
+    conversionRate      String
 }
 
 model CryptoData {

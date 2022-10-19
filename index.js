@@ -25,7 +25,7 @@ app.get('/status', (req, res) => {
 
 app.post('/get-transaction-data', getTransactions)
 app.post('/get-balance', getBalance)
-app.get('/save-price', savePeriodicPrice)
+app.post('/save-price', savePeriodicPrice)
 
 
 // -----------------------------------------------------
